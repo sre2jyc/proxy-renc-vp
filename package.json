@@ -1,10 +1,10 @@
 {
   "name": "recrypt-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "JS sdk for Proxy Re-encryption",
   "keywords": [
     "cryptography",
-    "proxy-re-encryption",
+    "proxy re-encryption",
     "transform-encryption",
     "ecc"
   ],
