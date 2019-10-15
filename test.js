@@ -1,10 +1,6 @@
-# js_sdk
-JS  sdk for Proxy Re-encryption compitable with py_sdk
-
-support secp256k1
-
-[test](./test.js)
-```js
+const Proxy = require("./index").Proxy;
+const PRE = require("./index");
+function test() {
     var kp_A = Proxy.generate_key_pair();
     var sk_A = Proxy.to_hex(kp_A.get_private_key().to_bytes());
     var pk_A = Proxy.to_hex(kp_A.get_public_key().to_bytes());
@@ -20,4 +16,5 @@ support secp256k1
 
     let decryptData = PRE.DecryptData(sk_B, obj)
     console.log(decryptData)
-```
+}
+test()

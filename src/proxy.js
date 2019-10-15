@@ -1,4 +1,8 @@
-
+var elliptic = require('../ext/elliptic.js');
+var elliptic = require('elliptic');
+var sha256 = require('js-sha256');
+var BN = require('../ext/bn');
+const secp256k1 = new elliptic.ec('secp256k1');
 
 function Config(curve /* Curve */){
     this._curve = curve;
@@ -610,4 +614,7 @@ Proxy.private_key_from_bytes = function(data){ return PrivateKey.from_bytes(data
 Proxy.public_key_from_bytes = function(data){ return PublicKey.from_bytes(data); }
 Proxy.re_encryption_key_from_bytes = function(data){ return ReEncryptionKey.from_bytes(data); }
 Proxy.capsule_from_bytes = function(data){ return Capsule.from_bytes(data); }
+Proxy.to_hex = function(data){return to_hex(data);}
+Proxy.from_hex = function(data){return from_hex(data);}
 
+module.exports = Proxy
