@@ -1,5 +1,16 @@
-var elliptic = require('../ext/elliptic.js');
-var elliptic = require('elliptic');
+var isNode = false;
+if (typeof process === 'object') {
+    if (typeof process.versions === 'object') {
+        if (typeof process.versions.node !== 'undefined') {
+            isNode = true;
+        }
+    }
+}
+if (!isNode) {
+    var elliptic = require('../ext/elliptic.js');
+} else {
+    var elliptic = require('elliptic');
+}
 var sha256 = require('js-sha256');
 var BN = require('../ext/bn');
 const secp256k1 = new elliptic.ec('secp256k1');
@@ -221,7 +232,7 @@ function hash_to_scalar(points){
 function PrivateKey(prvKey /* Scalar */, pubKey /* PublicKey */){
     this._scalar = prvKey;  // prvKeyObj
     if (typeof pubKey == "undefined"){
-        curve = new Curve();
+        var curve = new Curve();
         pubKey = new PublicKey(new GroupElement(curve.generator().mul(prvKey.valueOf())));
     }
     this._public_key = pubKey;
@@ -254,7 +265,7 @@ PrivateKey.prototype.valueOf = function(){ return this._scalar; }
  * @return PublicKey
  */
 PrivateKey.prototype.get_public_key = function(){ 
-    curve = new Curve();
+    var curve = new Curve();
     return new PublicKey(new GroupElement(curve.generator().mul(this.valueOf().valueOf())));
 }
 

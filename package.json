@@ -1,13 +1,24 @@
 {
-  "name": "js_proxy",
-  "version": "1.0.0",
-  "description": "",
+  "name": "recrypt-js",
+  "version": "1.1.0",
+  "description": "JS sdk for Proxy Re-encryption",
+  "keywords": [
+    "cryptography",
+    "proxy-re-encryption",
+    "transform-encryption",
+    "ecc"
+  ],
+  "homepage":"https://github.com/yjjnls/js_proxy",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "author": "gegham,yjjnls",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yjjnls/js_proxy"
+  },
+  "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-contrib-jshint": "^2.0.0"
