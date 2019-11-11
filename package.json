@@ -1,6 +1,6 @@
 {
   "name": "recrypt-js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "JS sdk for Proxy Re-encryption",
   "keywords": [
     "cryptography",
@@ -8,7 +8,7 @@
     "transform-encryption",
     "ecc"
   ],
-  "homepage":"https://github.com/yjjnls/js_proxy",
+  "homepage": "https://github.com/yjjnls/js_proxy",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
